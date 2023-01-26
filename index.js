@@ -39,6 +39,7 @@ app.get("/", (req, res) => {
       height: "50px",
       contents: {
         default: `
+            <hr />
           <div style="text-align: right; padding-top: 25px;">
             <b>Page</b> <span style="color: #444;">{{page}}</span> Of <span>{{pages}}</span>
           </div>`,
@@ -58,24 +59,24 @@ app.get("/", (req, res) => {
           ...x,
           desc: (x.desc || "").toLowerCase(),
           created_at: x.created_at.split("T")[0],
-          credit: x.description === "credit" ? x.amount : "0.00",
-          debit: x.description === "debit" ? x.amount : "0.00",
+          credit: x.description === "credit" ? `₦${x.amount}` : null,
+          debit: x.description === "debit" ? `₦${x.amount}` : null,
         })) || [],
       float:
         user?.float_transactions?.map((x) => ({
           ...x,
           desc: (x.desc || "").toLowerCase(),
           created_at: x.created_at.split("T")[0],
-          credit: x.description === "credit" ? x.amount : "0.00",
-          debit: x.description === "debit" ? x.amount : "0.00",
+          credit: x.description === "credit" ? `₦${x.amount}` : null,
+          debit: x.description === "debit" ? `₦${x.amount}` : null,
         })) || [],
       plans:
         user?.plans_transactions?.map((x) => ({
           ...x,
           desc: (x.desc || "").toLowerCase(),
           created_at: x.created_at.split("T")[0],
-          credit: x.description === "credit" ? x.amount : "0.00",
-          debit: x.description === "debit" ? x.amount : "0.00",
+          credit: x.description === "credit" ? `₦${x.amount}` : null,
+          debit: x.description === "debit" ? `₦${x.amount}` : null,
         })) || [],
     },
     path: "./report.pdf",

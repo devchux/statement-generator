@@ -152,6 +152,12 @@
         overflow: hidden;
         line-height: 20px;
       }
+      .table-wrapper .table table td:nth-of-type(3) div {
+        color: #4fc143;
+      }
+      .table-wrapper .table table td:nth-of-type(4) div {
+        color: #ff0000;
+      }
       .desc {
         text-align: left;
         text-transform: capitalize;
@@ -171,7 +177,7 @@
     <div class="main-content">
       <div class="details">
         <div class="left">
-          <h3 class="reporter-name">{{userDetails.fullname}}</h3>
+          <h3 class="reporter-name">Thomas Francis</h3>
           <p class="reporter-address">{{userDetails.address}}</p>
           <p class="reporter-phone">{{userDetails.phone_number}}</p>
           <p><b>Float Account Number</b> - {{userDetails.float_acc_number}}</p>
@@ -193,7 +199,7 @@
         <div class="table vault">
           <div class="table-header">
             <h3>Vault</h3>
-            <p><b>Balance:</b> ₦{{accountDetails.vault_balance}}</p>
+            <p><b>Balance:</b> {{accountDetails.vault_balance}}</p>
           </div>
           <table>
             <thead>
@@ -211,8 +217,8 @@
                 <td>
                   <div class="desc">{{this.desc}}</div>
                 </td>
-                <td><div>₦{{this.credit}}</div></td>
-                <td><div>₦{{this.debit}}</div></td>
+                <td><div>{{this.credit}}</div></td>
+                <td><div>{{this.debit}}</div></td>
               </tr>
               {{/each}}
             </tbody>
@@ -222,7 +228,7 @@
         <div class="table float">
           <div class="table-header">
             <h3>Float</h3>
-            <p><b>Balance:</b> ₦{{accountDetails.float_balance}}</p>
+            <p><b>Balance:</b> {{accountDetails.float_balance}}</p>
           </div>
           <table>
             <thead>
@@ -241,8 +247,8 @@
                 <td>
                   <div class="desc">{{this.desc}}</div>
                 </td>
-                <td><div>₦{{this.credit}}</div></td>
-                <td><div>₦{{this.debit}}</div></td>
+                <td><div>{{this.credit}}</div></td>
+                <td><div>{{this.debit}}</div></td>
               </tr>
               {{/each}}
             </tbody>
@@ -252,7 +258,7 @@
         <div class="table plans">
           <div class="table-header">
             <h3>Plans</h3>
-            <p><b>Balance:</b> ₦{{accountDetails.plans_balance}}</p>
+            <p><b>Balance:</b> {{accountDetails.plans_balance}}</p>
           </div>
           <table>
             <thead>
@@ -271,8 +277,8 @@
                 <td>
                   <div class="desc">{{this.desc}}</div>
                 </td>
-                <td><div>₦{{this.credit}}</div></td>
-                <td><div>₦{{this.debit}}</div></td>
+                <td><div>{{this.credit}}</div></td>
+                <td><div>{{this.debit}}</div></td>
               </tr>
               {{/each}}
             </tbody>
