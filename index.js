@@ -2,7 +2,6 @@ const pdf = require("pdf-creator-node");
 const fs = require("fs");
 const express = require("express");
 const path = require("path");
-const { user } = require("./mocks/user");
 
 const app = express();
 
@@ -13,9 +12,9 @@ const base64Encode = (file) => {
   return body.toString("base64");
 };
 
-app.get("/", (req, res) => {
+app.post("/", (req, res) => {
   const html = fs.readFileSync("report.html", "utf8");
-  //   const { data: user } = req.body;
+    const { data: user } = req.body;
 
   const options = {
     format: "A3",
