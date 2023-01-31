@@ -5,6 +5,7 @@ const path = require("path");
 
 const app = express();
 
+app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 const base64Encode = (file) => {
@@ -14,7 +15,7 @@ const base64Encode = (file) => {
 
 app.post("/", (req, res) => {
   const html = fs.readFileSync("report.html", "utf8");
-    const { data: user } = req.body;
+  const { data: user } = req.body;
 
   const options = {
     format: "A3",
