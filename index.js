@@ -21,6 +21,7 @@ app.post("/", (req, res) => {
     format: "A3",
     orientation: "portrait",
     border: "10mm",
+    phantomPath: "./node_modules/phantomjs-prebuilt/bin/phantomjs",
     header: {
       contents: {
         default: `
